@@ -8,6 +8,7 @@
 
 namespace GCG\Contacts;
 
+use \JSend\JSendResponse;
 /**
  * Description of GoogleContact
  *
@@ -21,4 +22,6 @@ class GoogleContacts extends \GCG\Core\AbstractMongoConnection {
         }
         return $this->contactsdb;
     }
+    
+    
 }

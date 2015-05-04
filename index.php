@@ -11,7 +11,11 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+        namespace GCG\Contacts;
         // put your code here
+        
+        $googleContactsImport = new GoogleContactsImport();
+        $googleContactsImport->import('stpetegreens.csv');
         ?>
     </body>
 </html>

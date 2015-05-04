@@ -11,13 +11,15 @@ namespace GCG\Contacts;
 use Goodby\CSV\Import\Standard\Lexer;
 use Goodby\CSV\Import\Standard\Interpreter;
 use Goodby\CSV\Import\Standard\LexerConfig;
+use \JSend\JSendResponse;
+use GCG\Contacts\GoogleContactsImport;
 
 /**
  * Description of GoogleContactsImport
  *
- * @author jam
+ * @author James Jones
  */
-class GoogleContactsImport extends \GCG\Core\AbstractMongoConnection {
+class GoogleContactsImport extends GCG\Contacts\GoogleContacts {
 
     //put your code here
     public function import($filename) {
@@ -27,7 +29,7 @@ class GoogleContactsImport extends \GCG\Core\AbstractMongoConnection {
                 ->setFromCharset('UTF-16LE'); // Customize CSV file encoding. Default value is null.
         $interpreter = new Interpreter();
         $interpreter->addObserver(function(array $row) {
-            $contact = [
+            $this->evaluate([
                 'county_code' => $row[0],
                 'voter_id' => $row[1],
                 'name_last' => $row[2],
@@ -65,31 +67,22 @@ class GoogleContactsImport extends \GCG\Core\AbstractMongoConnection {
                 'daytime_area_code' => $row[34],
                 'daytime_phone_number' => $row[35],
                 'daytime_phone_extension' => $row[36]
-            ];
+            ]);
 
 
             // do something here.
             // for example, insert $row to database.
         });
         $lexer->parse($filename, $interpreter);
-
-        // WDI_GDF_Data.csv (120.4MB) are the World Bank collection of development indicators:
-        // http://data.worldbank.org/data-catalog/world-development-indicators
-        if (($handle = fopen($filename, 'r')) !== false) {
-            // get the first row, which contains the column-titles (if necessary)
-            $header = fgetcsv($handle);
-
-            // loop through the file line-by-line
-            while (($data = fgetcsv($handle)) !== false) {
-                // resort/rewrite data and insert into DB here
-                // try to use conditions sparingly here, as those will cause slow-performance
-                // I don't know if this is really necessary, but it couldn't harm;
-                // see also: http://php.net/manual/en/features.gc.php
-                unset($data);
-            }
-            fclose($handle);
-        }
     }
 
-    public function
+    public function evaluate(array $rawcontact) {
+        $googlecontacts = $this->getContactsdb()->googlecontacts;
+        $insert_status = $googlecontacts->insert($rawcontact);
+        if(!$insert_status) {
+            echo "failed insert";
+        } else {
+            echo '.';
+        }
+    }
 }

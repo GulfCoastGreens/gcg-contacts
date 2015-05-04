@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a602b9b5c2c739ab070e3d90c17b239d",
+    "hash": "13ac725a74d4576d60deb4b2a1031e1d",
     "packages": [
         {
             "name": "caseyamcl/configula",
@@ -148,6 +148,52 @@
             "time": "2015-05-03 19:19:15"
         },
         {
+            "name": "shkm/jsend",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shkm/JSend.git",
+                "reference": "5d25f46cc2a40cc81131b2061b5533dc098e0dae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shkm/JSend/zipball/5d25f46cc2a40cc81131b2061b5533dc098e0dae",
+                "reference": "5d25f46cc2a40cc81131b2061b5533dc098e0dae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "justinrainbow/json-schema": "1.4.*@dev",
+                "phpunit/phpunit": ">=3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JSend": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jamie Schembri",
+                    "email": "jamie@schembri.me",
+                    "homepage": "http://schembri.me"
+                }
+            ],
+            "description": "A simple PHP implementation of the JSend specification.",
+            "homepage": "https://github.com/shkm/jsend",
+            "keywords": [
+                "jsend",
+                "json"
+            ],
+            "time": "2015-05-01 15:50:51"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v2.6.6",
             "target-dir": "Symfony/Component/Yaml",
@@ -202,7 +248,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "gulfcoastgreens/gcg-connection": 20
+        "gulfcoastgreens/gcg-connection": 20,
+        "shkm/jsend": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

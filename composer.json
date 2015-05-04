@@ -8,9 +8,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "GCG\\Contacts": "src/",
-            "Test": "tests/"
+        "psr-4": {
+            "GCG\\Contacts": "src/"
         }
     },
     "minimum-stability": "dev",
@@ -23,6 +22,7 @@
     ],
     "require": {
         "gulfcoastgreens/gcg-connection": "dev-master",
-        "goodby/csv": "*"
+        "goodby/csv": "*",
+        "shkm/jsend": "dev-master"
     }
 }
