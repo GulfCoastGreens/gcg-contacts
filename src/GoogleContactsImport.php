@@ -13,13 +13,13 @@ use Goodby\CSV\Import\Standard\Interpreter;
 use Goodby\CSV\Import\Standard\LexerConfig;
 use \JSend\JSendResponse;
 use GCG\Contacts\GoogleContactsImport;
-
+include 'GoogleContacts.php';
 /**
  * Description of GoogleContactsImport
  *
  * @author James Jones
  */
-class GoogleContactsImport extends GCG\Contacts\GoogleContacts {
+class GoogleContactsImport extends GoogleContacts {
 
     //put your code here
     public function import($filename) {
