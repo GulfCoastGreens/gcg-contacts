@@ -1,0 +1,28 @@
+{
+    "name": "gulfcoastgreens/gcg-contacts",
+    "description": "Description of project gpg-contacts.",
+    "authors": [
+        {
+            "name": "James Jones",
+            "email": "jamjon3@pinellasgreens.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "GCG\\Contacts": "src/",
+            "Test": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/GulfCoastGreens/gcg-connection.git"
+        }
+    ],
+    "require": {
+        "gulfcoastgreens/gcg-connection": "dev-master",
+        "goodby/csv": "*"
+    }
+}
