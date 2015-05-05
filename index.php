@@ -11,11 +11,23 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        namespace GCG\Contacts;
-        // put your code here
-        
-        $googleContactsImport = new GoogleContactsImport();
-        $googleContactsImport->import('stpetegreens.csv');
+        // Initialize Composer autoloader
+        try {
+            if (!file_exists($autoload = __DIR__ . '/vendor/autoload.php')) {
+                throw new \Exception('Composer dependencies not installed. Run `make install --directory app/api`');
+            }
+            require_once $autoload;
+
+
+            $filename = "stpetegreens.csv";
+            print '$filename';
+// echo $filename;
+            $googleContactsImport = new GCG\Contacts\GoogleContactsImport();
+            // $googleContactsImport->import('stpetegreens.csv');
+            $googleContactsImport->import($filename);
+        } catch (Exception $ex) {
+            echo 'Caught exception: ',  $ex->getMessage(), "\n";
+        }
         ?>
     </body>
 </html>

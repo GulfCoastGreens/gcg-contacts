@@ -9,7 +9,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "GCG\\Contacts": "src/"
+            "GCG\\Contacts\\": "src/"
         }
     },
     "minimum-stability": "dev",

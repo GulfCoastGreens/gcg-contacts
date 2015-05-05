@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a79cf9176ca7177907a88b56a08c3ae6",
+    "hash": "25b9aab5cf74a4d01cbc6d5d56161927",
     "packages": [
         {
             "name": "caseyamcl/configula",
@@ -116,12 +116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GulfCoastGreens/gcg-connection.git",
-                "reference": "a51baaeb2fb3ddb548c8cbac49862a5aee347676"
+                "reference": "0a3daaccbb4180e32395a68898204955ef2cc1e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GulfCoastGreens/gcg-connection/zipball/a51baaeb2fb3ddb548c8cbac49862a5aee347676",
-                "reference": "a51baaeb2fb3ddb548c8cbac49862a5aee347676",
+                "url": "https://api.github.com/repos/GulfCoastGreens/gcg-connection/zipball/0a3daaccbb4180e32395a68898204955ef2cc1e4",
+                "reference": "0a3daaccbb4180e32395a68898204955ef2cc1e4",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "source": "https://github.com/GulfCoastGreens/gcg-connection/tree/master",
                 "issues": "https://github.com/GulfCoastGreens/gcg-connection/issues"
             },
-            "time": "2015-05-03 19:19:15"
+            "time": "2015-05-05 04:03:09"
         },
         {
             "name": "shkm/jsend",
