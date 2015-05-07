@@ -9,3 +9,4 @@ target/
 # composer.lock
 /src/stpetegreens.csv
 /stpetegreens.csv
+/DailyVoterBase.txt
